@@ -14,9 +14,9 @@ margin: 1px;
 }
 
 #vertmenu h1 {
-display: block; 
+display: block;
 background-color:#FF9900;
-font-size: 100%; 
+font-size: 100%;
 padding: 3px 0 5px 3px;
 border: 1px solid #000000;
 color: #333333;
@@ -52,7 +52,7 @@ background-color: #eeeeee;
 </style>
 <style>
 
-body { 
+body {
   font-family: 'Open Sans', sans-serif;
   color: #666;
 }
@@ -68,7 +68,7 @@ header {
 	height: 100px;
 	padding: 0 15px;
 	background: #febe16;
-	
+
 }
 #content {
 	width: 180px;
@@ -93,12 +93,17 @@ footer {
 	padding: 0 15px;
 }
 
+ /* Hide 2nd ad by default  */
+#advertisement-bot {
+  display: none;
+}
+
 /************************************************************************************
 MEDIA QUERIES
 *************************************************************************************/
 /* for 980px or less */
 @media screen and (max-width: 980px) {
-	
+
 	#pagewrap {
 		width: 94%;
 	}
@@ -112,7 +117,7 @@ MEDIA QUERIES
 		margin: 0px 0px 5px 5px;
 		float: right;
 	}
-	
+
 	#sidebar {
 		clear: both;
 		padding: 1% 4%;
@@ -127,23 +132,29 @@ MEDIA QUERIES
 
 /* for 700px or less */
 @media screen and (max-width: 600px) {
-
 	#content {
 		width: auto;
 		float: none;
 	}
-	
+
 	#middle {
 		width: auto;
 		float: none;
 		margin-left: 0px;
 	}
-	
+
 	#sidebar {
 		width: auto;
 		float: none;
 	}
 
+  /* At medium viewports and below, hide the first ad and display the 2nd instead */
+  #advertisement-top {
+   display: none;
+  }
+  #advertisement-bot {
+   display: inline-block;
+  }
 }
 
 /* for 480px or less */
@@ -170,13 +181,16 @@ MEDIA QUERIES
 }
 header, #content, #middle, #sidebar {
 	margin-bottom: 5px;
-	
 }
-
 #pagewrap, header, #content, #middle, #sidebar, footer {
 	border: solid 1px #ccc;
-}.style4 {font-size: small}
-.style9 {font-family: Georgia, "Times New Roman", Times, serif; font-size: 18px; }
+}
+.style4 {
+  font-size: small
+}
+.style9 {
+  font-family: Georgia, "Times New Roman", Times, serif; font-size: 18px;
+}
 </style>
 <!-- TemplateBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
@@ -186,7 +200,7 @@ header, #content, #middle, #sidebar {
 
 <body>
 <div id="pagewrap">  <header><a href="/index.htm"><img src="/images/rwd-banner-2.jpg" width="159" height="100" border="0"></a></header>
-		
+
 	<section id="content">
           <style type="text/css">
 @import url(http://www.google.com/cse/api/branding.css);
@@ -324,11 +338,13 @@ header, #content, #middle, #sidebar {
   </section>  <section id="middle"><!-- TemplateBeginEditable name="EditRegion3" -->
   <h1 align="center" class="style6 style7">Title Here _Salmon and green boxes are ads. </h1>
   <p>&nbsp;</p>
-  <table width="350" border="5" align="left" bordercolor="#FFFFFF">
+
+  <table id="advertisement-top" width="350" border="5" align="left" bordercolor="#FFFFFF">
     <tr>
       <td><img src="/images/336x280-placeholder.jpg"></td>
     </tr>
   </table>
+
   <table width="350" border="5" bordercolor="#FFFFFF">
     <tr>
       <td bordercolor="#FFFFFF"><p class="style9">Introductory Text goes in this box </p>
@@ -340,11 +356,18 @@ header, #content, #middle, #sidebar {
       </td>
     </tr>
   </table>
+
+  <table id="advertisement-bot" width="350" border="5" align="left" bordercolor="#FFFFFF">
+    <tr>
+      <td><img src="/images/336x280-placeholder.jpg"></td>
+    </tr>
+  </table>
+
   <p>&nbsp;</p>
   <p align="center" class="style6 style10">&nbsp;</p>
   <!-- TemplateEndEditable -->
   <h1 align="center" class="style6 style7">&nbsp;</h1>
-	  </section>  
+	  </section>
 	<div align="center"></div>
 	<aside id="sidebar">
 		<div align="center">
@@ -381,7 +404,7 @@ header, #content, #middle, #sidebar {
     </div>
 		<p align="center">&nbsp;</p>
   </aside>
-	
+
 	<footer>
 		<h4>&nbsp;</h4>
 		<h4>Footer</h4>
